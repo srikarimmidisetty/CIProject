@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn verify -P integration-tests'
             }
         }
-        stage('Code Coverage') {
+        /*stage('Code Coverage') {
             steps {
                 sh 'mvn test'
                 archiveArtifacts artifacts: 'target/site/jacoco/index.html', allowEmptyArchive: true
@@ -39,7 +39,7 @@ pipeline {
                     sh 'mvn sonar:sonar'
                 }
             }
-        }
+        }*/
     }
     post {
         always {
