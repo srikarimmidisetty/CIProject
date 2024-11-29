@@ -24,7 +24,7 @@ pipeline {
                 sh 'mvn verify -P integration-tests'
             }
         }
-        /*stage('Code Coverage') {
+        stage('Code Coverage') {
             steps {
                 sh 'mvn test'
                 archiveArtifacts artifacts: 'target/site/jacoco/index.html', allowEmptyArchive: true
@@ -35,7 +35,7 @@ pipeline {
                 sh 'mvn checkstyle:checkstyle'
                 archiveArtifacts artifacts: 'target/site/checkstyle.html', allowEmptyArchive: true
             }
-        }
+        }/*
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
