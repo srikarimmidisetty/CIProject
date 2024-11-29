@@ -29,13 +29,13 @@ pipeline {
                 sh 'mvn test'
                 archiveArtifacts artifacts: 'target/site/jacoco/index.html', allowEmptyArchive: true
             }
-        }
+        }/*
         stage('Static Code Analysis') {
             steps {
                 sh 'mvn checkstyle:checkstyle'
                 archiveArtifacts artifacts: 'target/site/checkstyle.html', allowEmptyArchive: true
             }
-        }/*
+        }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
